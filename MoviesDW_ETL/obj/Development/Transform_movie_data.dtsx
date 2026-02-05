@@ -1,0 +1,1623 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/7/2025 4:56:02 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-V2E6QSG"
+  DTS:CreatorName="DESKTOP-V2E6QSG\yousseffned"
+  DTS:DTSID="{62F57FDA-E9A8-4A23-A7E7-9F60A86F22D8}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Transform_movie_data"
+  DTS:PackageType="5"
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{CDFEC9E4-FD16-466F-8D63-F4027BAF3ABC}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-V2E6QSG.MoviesDW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5B296174-07F7-4E9B-95C4-09D3C4BF7AA1}"
+      DTS:ObjectName="DESKTOP-V2E6QSG.MoviesDW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-V2E6QSG;Initial Catalog=MoviesDW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Transform_movie_data-{5B296174-07F7-4E9B-95C4-09D3C4BF7AA1}DESKTOP-V2E6QSG.MoviesDW;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{9DBC15EF-D320-4696-878C-4266F4FE49C0}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\yousseffned\Desktop\fned\projects\datawarehouse\resources\csv\basic_movie_info.csv" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{2E6A428A-26F4-47A6-9A8D-025877D527C0}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\yousseffned\Desktop\fned\projects\datawarehouse\resources\csv\basic_movie_info.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="rank"
+              DTS:DTSID="{FD2B0C5D-0F1B-496C-A4CF-456123581268}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{F27C01F0-E0EA-4485-A076-3D5632DE1AB5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="500"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="name"
+              DTS:DTSID="{6F626B34-4395-4D14-A209-B5205290375F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="year"
+              DTS:DTSID="{70B2B796-D262-4DE3-896B-C47AD6D72834}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="imbd_votes"
+              DTS:DTSID="{0D94BD35-AC6F-419E-BE3D-212C302EFD67}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="imdb_rating"
+              DTS:DTSID="{CFE38026-42B8-4B11-85C2-047A20573B06}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="certificate"
+              DTS:DTSID="{FB57C1AF-61AD-467B-9710-88A37815D0CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="duration"
+              DTS:DTSID="{308FDD93-806E-44A4-A21B-1FBFCDC519D7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="genre"
+              DTS:DTSID="{1D513AA2-004D-4329-9987-92447B514277}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cast_id"
+              DTS:DTSID="{15468DED-BE8A-439C-ADFB-FF19752F4064}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="director_id"
+              DTS:DTSID="{841FE93F-E19B-4594-963D-3819F9D2918F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="writter_id"
+              DTS:DTSID="{8D0D5D65-FFB4-4948-8478-4B3FD7C5E2B3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="1000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="img_link"
+              DTS:DTSID="{3E2B63BB-EC51-4884-8AAF-736552FB45A2}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT-Clean Movies"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{216EE065-0CE1-4F4A-8851-291769A0427B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT-Clean Movies"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT-Clean Movies\Aggregate"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="Aggregate"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT-Clean Movies\Aggregate.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT-Clean Movies\Aggregate.Inputs[Aggregate Input 1].Columns[id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="id"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\DFT-Clean Movies\Aggregate.Inputs[Aggregate Input 1].Columns[imbd_votes]"
+                      cachedDataType="i4"
+                      cachedName="imbd_votes"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[imbd_votes]" />
+                    <inputColumn
+                      refId="Package\DFT-Clean Movies\Aggregate.Inputs[Aggregate Input 1].Columns[imdb_rating]"
+                      cachedDataType="r8"
+                      cachedName="imdb_rating"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[imdb_rating]" />
+                    <inputColumn
+                      refId="Package\DFT-Clean Movies\Aggregate.Inputs[Aggregate Input 1].Columns[director_id]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="director_id"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[director_id]" />
+                    <inputColumn
+                      refId="Package\DFT-Clean Movies\Aggregate.Inputs[Aggregate Input 1].Columns[year]"
+                      cachedDataType="i4"
+                      cachedName="year"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[year]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT-Clean Movies\Aggregate.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\Aggregate.Outputs[Aggregate Output 1].Columns[numberOfMovies]"
+                      dataType="ui8"
+                      lineageId="Package\DFT-Clean Movies\Aggregate.Outputs[Aggregate Output 1].Columns[numberOfMovies]"
+                      name="numberOfMovies">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\Aggregate.Outputs[Aggregate Output 1].Columns[sum_imbd_votes]"
+                      dataType="i8"
+                      lineageId="Package\DFT-Clean Movies\Aggregate.Outputs[Aggregate Output 1].Columns[sum_imbd_votes]"
+                      name="sum_imbd_votes">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[imbd_votes]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\Aggregate.Outputs[Aggregate Output 1].Columns[avg_imdb_rating]"
+                      dataType="r8"
+                      lineageId="Package\DFT-Clean Movies\Aggregate.Outputs[Aggregate Output 1].Columns[avg_imdb_rating]"
+                      name="avg_imdb_rating">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[imdb_rating]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">5</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\Aggregate.Outputs[Aggregate Output 1].Columns[director_id]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\DFT-Clean Movies\Aggregate.Outputs[Aggregate Output 1].Columns[director_id]"
+                      name="director_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[director_id]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\Aggregate.Outputs[Aggregate Output 1].Columns[HighestRating]"
+                      dataType="r8"
+                      lineageId="Package\DFT-Clean Movies\Aggregate.Outputs[Aggregate Output 1].Columns[HighestRating]"
+                      name="HighestRating">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[imdb_rating]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">7</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\Aggregate.Outputs[Aggregate Output 1].Columns[LowestRating]"
+                      dataType="r8"
+                      lineageId="Package\DFT-Clean Movies\Aggregate.Outputs[Aggregate Output 1].Columns[LowestRating]"
+                      name="LowestRating">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[imdb_rating]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">6</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\Aggregate.Outputs[Aggregate Output 1].Columns[FirstMovieYear]"
+                      dataType="i4"
+                      lineageId="Package\DFT-Clean Movies\Aggregate.Outputs[Aggregate Output 1].Columns[FirstMovieYear]"
+                      name="FirstMovieYear">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[year]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">6</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\Aggregate.Outputs[Aggregate Output 1].Columns[LastMovieYear]"
+                      dataType="i4"
+                      lineageId="Package\DFT-Clean Movies\Aggregate.Outputs[Aggregate Output 1].Columns[LastMovieYear]"
+                      name="LastMovieYear">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[year]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">7</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT-Clean Movies\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT-Clean Movies\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT-Clean Movies\Data Conversion.Inputs[Data Conversion Input].Columns[director_id]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="director_id"
+                      lineageId="Package\DFT-Clean Movies\Aggregate.Outputs[Aggregate Output 1].Columns[director_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT-Clean Movies\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DFT-Clean Movies\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of director_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\DFT-Clean Movies\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of director_id]"
+                      name="Copy of director_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT-Clean Movies\Aggregate.Outputs[Aggregate Output 1].Columns[director_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT-Clean Movies\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DFT-Clean Movies\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT-Clean Movies\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT-Clean Movies\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT-Clean Movies\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dim].[dim_Director]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dim].[dim_Director]) [refTable]
+where [refTable].[DirectorID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DirectorKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DirectorID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DirectorName" dataType="DT_STR" length="200" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="BirthYear" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Bio" dataType="DT_NTEXT" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProfileImage" dataType="DT_STR" length="500" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="CreatedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ModifiedDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT-Clean Movies\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of director_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT-Clean Movies\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-V2E6QSG.MoviesDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-V2E6QSG.MoviesDW]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT-Clean Movies\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT-Clean Movies\Lookup.Inputs[Lookup Input].Columns[Copy of director_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Copy of director_id"
+                      lineageId="Package\DFT-Clean Movies\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of director_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">DirectorID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT-Clean Movies\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT-Clean Movies\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\Lookup.Outputs[Lookup Match Output].Columns[DirectorKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\DFT-Clean Movies\Lookup.Outputs[Lookup Match Output].Columns[DirectorKey]"
+                      name="DirectorKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">DirectorKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT-Clean Movies\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT-Clean Movies\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT-Clean Movies\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT-Clean Movies\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT-Clean Movies\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT-Clean Movies\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT-Clean Movies\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[fact].[DirectorStats]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT-Clean Movies\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-V2E6QSG.MoviesDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-V2E6QSG.MoviesDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT-Clean Movies\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DirectorKey]"
+                      cachedDataType="i4"
+                      cachedName="DirectorKey"
+                      externalMetadataColumnId="Package\DFT-Clean Movies\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DirectorKey]"
+                      lineageId="Package\DFT-Clean Movies\Lookup.Outputs[Lookup Match Output].Columns[DirectorKey]" />
+                    <inputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[numberOfMovies]"
+                      cachedDataType="ui8"
+                      cachedName="numberOfMovies"
+                      externalMetadataColumnId="Package\DFT-Clean Movies\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalMovies]"
+                      lineageId="Package\DFT-Clean Movies\Aggregate.Outputs[Aggregate Output 1].Columns[numberOfMovies]" />
+                    <inputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[sum_imbd_votes]"
+                      cachedDataType="i8"
+                      cachedName="sum_imbd_votes"
+                      externalMetadataColumnId="Package\DFT-Clean Movies\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalIMDBVotes]"
+                      lineageId="Package\DFT-Clean Movies\Aggregate.Outputs[Aggregate Output 1].Columns[sum_imbd_votes]" />
+                    <inputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_imdb_rating]"
+                      cachedDataType="r8"
+                      cachedName="avg_imdb_rating"
+                      externalMetadataColumnId="Package\DFT-Clean Movies\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AverageIMDBRating]"
+                      lineageId="Package\DFT-Clean Movies\Aggregate.Outputs[Aggregate Output 1].Columns[avg_imdb_rating]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DirectorStatsKey]"
+                      dataType="i4"
+                      name="DirectorStatsKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DirectorKey]"
+                      dataType="i4"
+                      name="DirectorKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalMovies]"
+                      dataType="i4"
+                      name="TotalMovies" />
+                    <externalMetadataColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalIMDBVotes]"
+                      dataType="i8"
+                      name="TotalIMDBVotes" />
+                    <externalMetadataColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AverageIMDBRating]"
+                      dataType="numeric"
+                      name="AverageIMDBRating"
+                      precision="3"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastUpdated]"
+                      dataType="dbTimeStamp"
+                      name="LastUpdated" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT-Clean Movies\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT-Clean Movies\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT-Clean Movies\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT rank, id, name, year, imbd_votes, imdb_rating, 
+       certificate, duration, genre, cast_id,
+       director_id,writter_id,img_link
+FROM staging.stg_movies where LEN(director_id)=9;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT-Clean Movies\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-V2E6QSG.MoviesDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-V2E6QSG.MoviesDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[rank]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[rank]"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[rank]"
+                      name="rank"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      length="50"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                      length="500"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[year]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[year]"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[year]"
+                      name="year"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[imbd_votes]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[imbd_votes]"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[imbd_votes]"
+                      name="imbd_votes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[imdb_rating]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[imdb_rating]"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[imdb_rating]"
+                      name="imdb_rating"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[certificate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[certificate]"
+                      length="50"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[certificate]"
+                      name="certificate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[duration]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[duration]"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[duration]"
+                      name="duration"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[genre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[genre]"
+                      length="200"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[genre]"
+                      name="genre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[cast_id]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[cast_id]"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[cast_id]"
+                      name="cast_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[director_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[director_id]"
+                      length="100"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[director_id]"
+                      name="director_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[writter_id]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[writter_id]"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[writter_id]"
+                      name="writter_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[img_link]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[img_link]"
+                      length="1000"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[img_link]"
+                      name="img_link"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[rank]"
+                      dataType="i4"
+                      name="rank" />
+                    <externalMetadataColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      dataType="wstr"
+                      length="50"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                      dataType="wstr"
+                      length="500"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[year]"
+                      dataType="i4"
+                      name="year" />
+                    <externalMetadataColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[imbd_votes]"
+                      dataType="i4"
+                      name="imbd_votes" />
+                    <externalMetadataColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[imdb_rating]"
+                      dataType="r8"
+                      name="imdb_rating" />
+                    <externalMetadataColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[certificate]"
+                      dataType="wstr"
+                      length="50"
+                      name="certificate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[duration]"
+                      dataType="r8"
+                      name="duration" />
+                    <externalMetadataColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[genre]"
+                      dataType="wstr"
+                      length="200"
+                      name="genre" />
+                    <externalMetadataColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[cast_id]"
+                      dataType="nText"
+                      name="cast_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[director_id]"
+                      dataType="wstr"
+                      length="100"
+                      name="director_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[writter_id]"
+                      dataType="nText"
+                      name="writter_id" />
+                    <externalMetadataColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[img_link]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1000"
+                      name="img_link" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[rank]"
+                      dataType="i4"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[rank]"
+                      name="rank" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[name]"
+                      dataType="wstr"
+                      length="500"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[name]"
+                      name="name" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[year]"
+                      dataType="i4"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[year]"
+                      name="year" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[imbd_votes]"
+                      dataType="i4"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[imbd_votes]"
+                      name="imbd_votes" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[imdb_rating]"
+                      dataType="r8"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[imdb_rating]"
+                      name="imdb_rating" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[certificate]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[certificate]"
+                      name="certificate" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[duration]"
+                      dataType="r8"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[duration]"
+                      name="duration" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[genre]"
+                      dataType="wstr"
+                      length="200"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[genre]"
+                      name="genre" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[cast_id]"
+                      dataType="nText"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[cast_id]"
+                      name="cast_id" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[director_id]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[director_id]"
+                      name="director_id" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[writter_id]"
+                      dataType="nText"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[writter_id]"
+                      name="writter_id" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[img_link]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1000"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[img_link]"
+                      name="img_link" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT-Clean Movies\Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT-Clean Movies\Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT-Clean Movies\Split.Inputs[Conditional Split Input].Columns[year]"
+                      cachedDataType="i4"
+                      cachedName="year"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[year]" />
+                    <inputColumn
+                      refId="Package\DFT-Clean Movies\Split.Inputs[Conditional Split Input].Columns[imdb_rating]"
+                      cachedDataType="r8"
+                      cachedName="imdb_rating"
+                      lineageId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[imdb_rating]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT-Clean Movies\Split.Outputs[Valid_Movies]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Valid_Movies"
+                  synchronousInputId="Package\DFT-Clean Movies\Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[imdb_rating]} &gt; 0 &amp;&amp; #{Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[year]} &gt;= 1900 &amp;&amp; #{Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output].Columns[year]} &lt;= 2025</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">imdb_rating &gt; 0 &amp;&amp; year &gt;= 1900 &amp;&amp; year &lt;= 2025</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT-Clean Movies\Split.Outputs[Invalid_Movies]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Invalid_Movies"
+                  synchronousInputId="Package\DFT-Clean Movies\Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT-Clean Movies\Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\DFT-Clean Movies\Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT-Clean Movies\Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT-Clean Movies\Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT-Clean Movies\Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT-Clean Movies.Paths[Aggregate Output 1]"
+              endId="Package\DFT-Clean Movies\Data Conversion.Inputs[Data Conversion Input]"
+              name="Aggregate Output 1"
+              startId="Package\DFT-Clean Movies\Aggregate.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\DFT-Clean Movies.Paths[Data Conversion Output]"
+              endId="Package\DFT-Clean Movies\Lookup.Inputs[Lookup Input]"
+              name="Data Conversion Output"
+              startId="Package\DFT-Clean Movies\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DFT-Clean Movies.Paths[Lookup Match Output]"
+              endId="Package\DFT-Clean Movies\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\DFT-Clean Movies\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\DFT-Clean Movies.Paths[OLE DB Source Output]"
+              endId="Package\DFT-Clean Movies\Split.Inputs[Conditional Split Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT-Clean Movies\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\DFT-Clean Movies.Paths[Valid_Movies]"
+              endId="Package\DFT-Clean Movies\Aggregate.Inputs[Aggregate Input 1]"
+              name="Valid_Movies"
+              startId="Package\DFT-Clean Movies\Split.Outputs[Valid_Movies]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\DFT-Clean Movies"
+          TopLeft="177.374992316589,62.6999972724916" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT-Clean Movies">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="128,42.6666666666667"
+          Id="Package\DFT-Clean Movies\Aggregate"
+          TopLeft="18.7499991618097,140.816663226287" />
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\DFT-Clean Movies\OLE DB Destination"
+          TopLeft="529.166643011074,114.833329923948" />
+        <NodeLayout
+          Size="100,42.6666666666667"
+          Id="Package\DFT-Clean Movies\Split"
+          TopLeft="322.374992540107,329.383329397043" />
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\DFT-Clean Movies\OLE DB Source"
+          TopLeft="461.041646056498,203.016656986078" />
+        <NodeLayout
+          Size="113.333333333334,42.6666666666667"
+          Id="Package\DFT-Clean Movies\Lookup"
+          TopLeft="281.249987427146,161.416661036015" />
+        <EdgeLayout
+          Id="Package\DFT-Clean Movies.Paths[Valid_Movies]"
+          TopLeft="357.041659206774,329.383329397043">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-274.291660044964,-145.899999504089"
+              Start="0,0"
+              End="-274.291660044964,-138.399999504089">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-55.7385824741153" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-55.7385824741153"
+                    Point2="0,-59.7385824741153"
+                    Point3="-4,-59.7385824741153" />
+                  <mssgle:LineSegment
+                    End="-270.291660044964,-59.7385824741153" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-270.291660044964,-59.7385824741153"
+                    Point2="-274.291660044964,-59.7385824741153"
+                    Point3="-274.291660044964,-63.7385824741153" />
+                  <mssgle:LineSegment
+                    End="-274.291660044964,-138.399999504089" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-166.531591741232,-54.7385824741153,58.7715234375,11.0625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT-Clean Movies.Paths[OLE DB Source Output]"
+          TopLeft="536.374979389832,245.683323652745">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-148.666653516391,83.7000057442984"
+              Start="0,0"
+              End="-148.666653516391,76.2000057442984">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.4291372505699" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45.4291372505699"
+                    Point2="0,49.4291372505699"
+                    Point3="-4,49.4291372505699" />
+                  <mssgle:LineSegment
+                    End="-144.666653516391,49.4291372505699" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-144.666653516391,49.4291372505699"
+                    Point2="-148.666653516391,49.4291372505699"
+                    Point3="-148.666653516391,53.4291372505699" />
+                  <mssgle:LineSegment
+                    End="-148.666653516391,76.2000057442984" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT-Clean Movies.Paths[Lookup Match Output]"
+          TopLeft="394.583320760479,182.749994369348">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="134.583322250595,-46.583331112067"
+              Start="0,0"
+              End="127.083322250595,-46.583331112067">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="63.2916611252974,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="63.2916611252974,0"
+                    Point2="67.2916611252974,0"
+                    Point3="67.2916611252974,-4" />
+                  <mssgle:LineSegment
+                    End="67.2916611252974,-42.583331112067" />
+                  <mssgle:CubicBezierSegment
+                    Point1="67.2916611252974,-42.583331112067"
+                    Point2="67.2916611252974,-46.583331112067"
+                    Point3="71.2916611252974,-46.583331112067" />
+                  <mssgle:LineSegment
+                    End="127.083322250595,-46.583331112067" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="19.1002744065474,1,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\DFT-Clean Movies\Data Conversion"
+          TopLeft="208.928562088737,94.4999986273902" />
+        <EdgeLayout
+          Id="Package\DFT-Clean Movies.Paths[Aggregate Output 1]"
+          TopLeft="146.74999916181,162.14999655962">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="62.1785629269271,-46.3166645988968"
+              Start="0,0"
+              End="54.6785629269271,-46.3166645988968">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="27.0892814634635,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.0892814634635,0"
+                    Point2="31.0892814634635,0"
+                    Point3="31.0892814634635,-4" />
+                  <mssgle:LineSegment
+                    End="31.0892814634635,-42.3166645988968" />
+                  <mssgle:CubicBezierSegment
+                    Point1="31.0892814634635,-42.3166645988968"
+                    Point2="31.0892814634635,-46.3166645988968"
+                    Point3="35.0892814634635,-46.3166645988968" />
+                  <mssgle:LineSegment
+                    End="54.6785629269271,-46.3166645988968" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT-Clean Movies.Paths[Data Conversion Output]"
+          TopLeft="287.595228755403,137.166665294057">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="50.3214253384092,24.2499957419581"
+              Start="0,0"
+              End="50.3214253384092,16.7499957419581">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.12499787097904" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.12499787097904"
+                    Point2="0,12.124997870979"
+                    Point3="4,12.124997870979" />
+                  <mssgle:LineSegment
+                    End="46.3214253384092,12.124997870979" />
+                  <mssgle:CubicBezierSegment
+                    Point1="46.3214253384092,12.124997870979"
+                    Point2="50.3214253384092,12.124997870979"
+                    Point3="50.3214253384092,16.124997870979" />
+                  <mssgle:LineSegment
+                    End="50.3214253384092,16.7499957419581" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT-Clean Movies\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT-Clean Movies\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dim].[dim_Director]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT-Clean Movies\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
